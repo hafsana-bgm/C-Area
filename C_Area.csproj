@@ -16,12 +16,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Controllar\" />
-    <Folder Include="Areas\C_Area\Models\" />
-    <Folder Include="Areas\C_Area\Views\" />
-    <Folder Include="Areas\DataModel\" />
-    <Folder Include="Areas\Data\" />
-  </ItemGroup>
-
 </Project>

@@ -41,10 +41,10 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "C_Area",
-    pattern: "{area=C_Area}/{controller=Dashboard}/{action=Index}");
+    pattern: "{area=C_Area}/{controller=Shops}/{action=Index}");
 app.MapControllerRoute(
     name: "areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area:exists}/{controller=Shops}/{action=Index}/{id?}");
 
 app.MapRazorPages();
 

@@ -1,0 +1,91 @@
+﻿
+@model C_Area.Areas.C_Area.ViewModel.ProductVM
+
+@{
+    ViewData["Title"] = "ShopIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>ShopIndex</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/C_Area/Shops/ShopEdit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class="asp-form-control" name="Name" id="Name" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description</label>
+                <input asp-for="Description" class="form-control" name="Description" id="Description" />
+
+            </div>
+            <div class="form-group">
+
+
+                <div>
+                    <input type="file" accept="image/*" onchange="readURL(this)" asp-for="UploadImage" class="form-control" name="UploadImage" id="UploadImage" />
+                </div>
+                <img id="img-preview" src="https://ami-sni.com/wp-content/themes/consultix/images/no-image-found-360x250.png" width="200px" />
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Price</label>
+                <input asp-for="Price" class="form-control" name="Price" id="Price" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="LabelId" class="control-label">Label Id</label>
+                <input asp-for="LabelId" class="form-control" name="LabelId" id="LabelId" />
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Category" class="control-label">Category</label>
+                <input asp-for="Category" class="form-control" name="Category" id="Category" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IsActive" class="control-label">Is Active</label>
+                <select id="IsActive" class="form-control" name="IsActive">
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+        //Change this to your no-image file
+    let noimage =
+      "https://ami-sni.com/wp-content/themes/consultix/images/no-image-found-360x250.png";
+
+    function readURL(input) {
+      console.log(input.files);
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#img-preview").attr("src", e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        $("#img-preview").attr("src", noimage);
+      }
+    }
+
+</script>
+
+
